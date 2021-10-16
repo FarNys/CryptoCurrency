@@ -1,0 +1,127 @@
+@import "../index.scss";
+.diagram_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  h3 {
+    text-align: center;
+    padding: 15px;
+    font-family: "Varela Round", sans-serif;
+    color: $color_4;
+  }
+}
+.top_part_diagram {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+  padding: 15px;
+  h4 {
+    font-family: "Varela Round", sans-serif;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.input_time {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  flex-direction: column;
+}
+.bot_part_diagram {
+  padding: 15px;
+}
+.select_timer {
+  width: 100px;
+}
+.diagram_data {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 20px;
+  width: 100%;
+  .left_side {
+    padding: 10px;
+    h5 {
+      font-family: "Varela Round", sans-serif;
+      font-size: 1em;
+    }
+  }
+  .right_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    h5 {
+      font-family: "Varela Round", sans-serif;
+      font-size: 1em;
+    }
+    span {
+      padding: 5px;
+      font-size: 0.8em;
+      color: gray;
+    }
+  }
+}
+.crypto_desc {
+  padding: 5px;
+  margin: 20px auto;
+  h4 {
+    padding: 10px 0;
+    font-size: 1.1em;
+    font-family: "Varela Round", sans-serif;
+  }
+  h5 {
+    font-family: "Varela Round", sans-serif;
+  }
+  h6 {
+    font-family: "Varela Round", sans-serif;
+  }
+  p {
+    line-height: 25px;
+    font-weight: 600;
+    color: $color_1;
+    a {
+      color: $color_4;
+      border-bottom: 1px solid $color_4;
+      &:hover {
+        color: $color_2;
+        border-bottom: 1px solid $color_2;
+      }
+    }
+  }
+  h3 {
+    color: $color_4;
+    padding: 10px 0;
+    font-family: "Varela Round", sans-serif;
+  }
+}
+@media (max-width: 600px) {
+  .diagram_container {
+    h3 {
+      font-size: 13px;
+      padding: 5px;
+    }
+    h4 {
+      font-size: 11px;
+    }
+    h5 {
+      font-size: 11px !important;
+    }
+  }
+  .top_part_diagram {
+    padding: 10px;
+  }
+  .bot_part_diagram {
+    padding: 10px;
+  }
+  .diagram_data {
+    margin: 5px;
+  }
+}

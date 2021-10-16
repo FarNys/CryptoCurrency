@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+*::-moz-selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+*::selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+.router_container {
+  overflow: hidden;
+}
+
+:root {
+  --color_0: #fff;
+  --color_1: #3f3f3f;
+  --color_2: #93f9b9;
+  --color_2_1: #93f9b825;
+  --color_3: #003973;
+  --color_4: #3ca55c;
+}
+
+.home_container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #93f9b825;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title_home {
+  padding: 15px;
+  color: #3ca55c;
+  letter-spacing: 0.7px;
+}
+
+.title_home h2 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.currency_box {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+}
+
+.btn_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.btn_container button {
+  border: 1px solid #93f9b9;
+  background: #93f9b9;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Varela Round", sans-serif;
+  margin: 10px;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.btn_container button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background: #93f9b825;
+}
+
+.btn_container button:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+/*# sourceMappingURL=Home.css.map */

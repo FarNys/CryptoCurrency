@@ -1,0 +1,214 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+*::-moz-selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+*::selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+.router_container {
+  overflow: hidden;
+}
+
+:root {
+  --color_0: #fff;
+  --color_1: #3f3f3f;
+  --color_2: #93f9b9;
+  --color_2_1: #93f9b825;
+  --color_3: #003973;
+  --color_4: #3ca55c;
+}
+
+.crypto_container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #93f9b825;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title_crypto {
+  padding: 15px;
+  color: #3ca55c;
+  letter-spacing: 0.7px;
+}
+
+.title_crypto h2 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.crypto_desc_container {
+  padding: 15px;
+}
+
+.crypto_desc_container h1,
+.crypto_desc_container h2,
+.crypto_desc_container h3,
+.crypto_desc_container h4,
+.crypto_desc_container h5,
+.crypto_desc_container h6 {
+  color: #3ca55c;
+  margin: 30px 0 10px 0;
+  font-family: "Varela Round", sans-serif;
+}
+
+.crypto_desc_container p {
+  line-height: 23px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  color: #3f3f3f;
+}
+
+.crypto_desc_container a {
+  color: #3ca55c;
+  border-bottom: 1px solid #3ca55c;
+  padding-bottom: 3px;
+}
+
+.statistical_data_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  width: 100%;
+}
+
+.statistical_data_container .topside_data h3 {
+  font-family: "Varela Round", sans-serif;
+  color: #3ca55c;
+}
+
+.botside_data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  margin: 30px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.leftside_data_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0.9;
+      -ms-flex: 0.9;
+          flex: 0.9;
+  margin: 10px;
+  max-width: 95%;
+}
+
+.leftside_data_container h3 {
+  font-family: "Varela Round", sans-serif;
+  padding: 15px;
+  color: #3ca55c;
+}
+
+.rightside_data_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0.4;
+      -ms-flex: 0.4;
+          flex: 0.4;
+  margin: 10px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  cursor: pointer;
+}
+
+.rightside_data_container h3 {
+  font-family: "Varela Round", sans-serif;
+  padding: 15px;
+  color: #3ca55c;
+}
+
+.data_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 25px;
+  width: 100%;
+  background-color: #93f9b825;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  border-bottom: 1px dashed #3ca55c;
+}
+
+.data_container:hover {
+  color: #3ca55c !important;
+}
+
+.data_container p {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 1.1px;
+}
+
+.data_container a {
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  -webkit-transition: 0.2s ease transform;
+  transition: 0.2s ease transform;
+  padding-left: 10px;
+}
+
+.data_container:nth-child(even) {
+  background-color: #93f9b9;
+}
+
+.data_container li {
+  list-style: none;
+}
+
+@media (max-width: 500px) {
+  .statistical_data_container {
+    font-size: 0.9em;
+  }
+}
+/*# sourceMappingURL=Crypto.css.map */

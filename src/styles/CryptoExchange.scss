@@ -1,0 +1,135 @@
+@import "../index.scss";
+.cryptoExchange_container {
+  flex: 1;
+  background-color: $color_2_1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.title_cryptoExchange {
+  padding: 15px;
+  color: $color_4;
+  letter-spacing: 0.7px;
+  h2 {
+    font-family: "Varela Round", sans-serif;
+    position: relative;
+  }
+}
+.all_exchanges {
+  margin: 20px;
+  padding: 30px;
+  background-color: $color_2;
+  border-radius: 12px;
+
+  .inner_exchange {
+    padding: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: $color_2;
+  }
+}
+.box_exchange_container {
+  width: 95%;
+  display: flex;
+  // justify-content: flex-start;
+  // align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.single_cryptoexchange {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 20px;
+  background-color: $color_0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  transition: 0.2s ease transform;
+  &:hover {
+    border: 3px solid $color_2;
+    transform: scale(1.01);
+  }
+  .top_card_exchange {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background-color: $color_2;
+
+    .box_cryptoexchange_name {
+      font-family: "Varela Round", sans-serif;
+      font-size: 18px;
+    }
+  }
+  .back_card_exchange {
+    padding: 10px;
+    margin-top: 10px;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Varela Round", sans-serif;
+      padding: 10px 5px;
+    }
+    p {
+      font-size: 17px;
+    }
+    li {
+      font-size: 17px;
+    }
+  }
+  .mid_card_exchange {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 15px;
+    p {
+      font-family: "Varela Round", sans-serif;
+      padding: 5px;
+    }
+  }
+  .bot_card_footer {
+    position: relative;
+    color: #c3c3c3;
+    display: flex;
+    p {
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+}
+.pie_chart_container {
+  width: 95%;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease transform;
+  border-top: 1px solid $color_4;
+  h3 {
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    color: $color_4;
+    padding: 10px 3px;
+    border-bottom: 3px solid $color_4;
+    width: fit-content;
+    margin: auto;
+  }
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+.doughnut_diagram {
+  // padding: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}

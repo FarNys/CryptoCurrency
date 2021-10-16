@@ -1,0 +1,214 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+*::-moz-selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+*::selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+.router_container {
+  overflow: hidden;
+}
+
+:root {
+  --color_0: #fff;
+  --color_1: #3f3f3f;
+  --color_2: #93f9b9;
+  --color_2_1: #93f9b825;
+  --color_3: #003973;
+  --color_4: #3ca55c;
+}
+
+.diagram_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.diagram_container h3 {
+  text-align: center;
+  padding: 15px;
+  font-family: "Varela Round", sans-serif;
+  color: #3ca55c;
+}
+
+.top_part_diagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  padding: 15px;
+}
+
+.top_part_diagram h4 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.top_part_diagram img {
+  width: 50px;
+  height: 50px;
+}
+
+.input_time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.bot_part_diagram {
+  padding: 15px;
+}
+
+.select_timer {
+  width: 100px;
+}
+
+.diagram_data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.diagram_data .left_side {
+  padding: 10px;
+}
+
+.diagram_data .left_side h5 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 1em;
+}
+
+.diagram_data .right_side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.diagram_data .right_side h5 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 1em;
+}
+
+.diagram_data .right_side span {
+  padding: 5px;
+  font-size: 0.8em;
+  color: gray;
+}
+
+.crypto_desc {
+  padding: 5px;
+  margin: 20px auto;
+}
+
+.crypto_desc h4 {
+  padding: 10px 0;
+  font-size: 1.1em;
+  font-family: "Varela Round", sans-serif;
+}
+
+.crypto_desc h5 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.crypto_desc h6 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.crypto_desc p {
+  line-height: 25px;
+  font-weight: 600;
+  color: #3f3f3f;
+}
+
+.crypto_desc p a {
+  color: #3ca55c;
+  border-bottom: 1px solid #3ca55c;
+}
+
+.crypto_desc p a:hover {
+  color: #93f9b9;
+  border-bottom: 1px solid #93f9b9;
+}
+
+.crypto_desc h3 {
+  color: #3ca55c;
+  padding: 10px 0;
+  font-family: "Varela Round", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .diagram_container h3 {
+    font-size: 13px;
+    padding: 5px;
+  }
+  .diagram_container h4 {
+    font-size: 11px;
+  }
+  .diagram_container h5 {
+    font-size: 11px !important;
+  }
+  .top_part_diagram {
+    padding: 10px;
+  }
+  .bot_part_diagram {
+    padding: 10px;
+  }
+  .diagram_data {
+    margin: 5px;
+  }
+}
+/*# sourceMappingURL=Diagram.css.map */

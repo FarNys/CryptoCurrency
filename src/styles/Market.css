@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+*::-moz-selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+*::selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+.router_container {
+  overflow: hidden;
+}
+
+:root {
+  --color_0: #fff;
+  --color_1: #3f3f3f;
+  --color_2: #93f9b9;
+  --color_2_1: #93f9b825;
+  --color_3: #003973;
+  --color_4: #3ca55c;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+}
+
+tr {
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: #93f9b825;
+}
+
+@media (max-width: 660px) {
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  .collapse_col_last {
+    display: none;
+  }
+  tr td {
+    padding: 10px 0;
+  }
+}
+/*# sourceMappingURL=Market.css.map */

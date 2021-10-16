@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+*::-moz-selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+*::selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+.router_container {
+  overflow: hidden;
+}
+
+:root {
+  --color_0: #fff;
+  --color_1: #3f3f3f;
+  --color_2: #93f9b9;
+  --color_2_1: #93f9b825;
+  --color_3: #003973;
+  --color_4: #3ca55c;
+}
+
+.news_container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #93f9b825;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title_news {
+  padding: 15px;
+  color: #3ca55c;
+  letter-spacing: 0.7px;
+}
+
+.title_news h2 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.news_cards_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 90%;
+  margin: 20px auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=News.css.map */

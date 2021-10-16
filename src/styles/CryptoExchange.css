@@ -1,0 +1,231 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+*::-moz-selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+*::selection {
+  background-color: var(--color_2);
+  color: var(--color_0);
+}
+
+.router_container {
+  overflow: hidden;
+}
+
+:root {
+  --color_0: #fff;
+  --color_1: #3f3f3f;
+  --color_2: #93f9b9;
+  --color_2_1: #93f9b825;
+  --color_3: #003973;
+  --color_4: #3ca55c;
+}
+
+.cryptoExchange_container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #93f9b825;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title_cryptoExchange {
+  padding: 15px;
+  color: #3ca55c;
+  letter-spacing: 0.7px;
+}
+
+.title_cryptoExchange h2 {
+  font-family: "Varela Round", sans-serif;
+  position: relative;
+}
+
+.all_exchanges {
+  margin: 20px;
+  padding: 30px;
+  background-color: #93f9b9;
+  border-radius: 12px;
+}
+
+.all_exchanges .inner_exchange {
+  padding: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: #93f9b9;
+}
+
+.box_exchange_container {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 10px auto;
+  -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.single_cryptoexchange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  -webkit-transition: 0.2s ease transform;
+  transition: 0.2s ease transform;
+}
+
+.single_cryptoexchange:hover {
+  border: 3px solid #93f9b9;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.single_cryptoexchange .top_card_exchange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-color: #93f9b9;
+}
+
+.single_cryptoexchange .top_card_exchange .box_cryptoexchange_name {
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+}
+
+.single_cryptoexchange .back_card_exchange {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.single_cryptoexchange .back_card_exchange h1,
+.single_cryptoexchange .back_card_exchange h2,
+.single_cryptoexchange .back_card_exchange h3,
+.single_cryptoexchange .back_card_exchange h4,
+.single_cryptoexchange .back_card_exchange h5,
+.single_cryptoexchange .back_card_exchange h6 {
+  font-family: "Varela Round", sans-serif;
+  padding: 10px 5px;
+}
+
+.single_cryptoexchange .back_card_exchange p {
+  font-size: 17px;
+}
+
+.single_cryptoexchange .back_card_exchange li {
+  font-size: 17px;
+}
+
+.single_cryptoexchange .mid_card_exchange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+}
+
+.single_cryptoexchange .mid_card_exchange p {
+  font-family: "Varela Round", sans-serif;
+  padding: 5px;
+}
+
+.single_cryptoexchange .bot_card_footer {
+  position: relative;
+  color: #c3c3c3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.single_cryptoexchange .bot_card_footer p {
+  padding: 10px;
+  font-size: 12px;
+}
+
+.pie_chart_container {
+  width: 95%;
+  max-width: 800px;
+  margin: 40px auto;
+  -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.2s ease transform;
+  transition: 0.2s ease transform;
+  border-top: 1px solid #3ca55c;
+}
+
+.pie_chart_container h3 {
+  text-align: center;
+  font-family: "Varela Round", sans-serif;
+  color: #3ca55c;
+  padding: 10px 3px;
+  border-bottom: 3px solid #3ca55c;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.pie_chart_container:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.doughnut_diagram {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+/*# sourceMappingURL=CryptoExchange.css.map */

@@ -1,0 +1,48 @@
+@import "../index.scss";
+.home_container {
+  flex: 1;
+  background-color: $color_2_1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.title_home {
+  padding: 15px;
+  color: $color_4;
+  letter-spacing: 0.7px;
+  h2 {
+    font-family: "Varela Round", sans-serif;
+  }
+}
+.currency_box {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 95%;
+}
+.btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    border: 1px solid $color_2;
+    background: $color_2;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Varela Round", sans-serif;
+    margin: 10px;
+    transition: 0.2s ease all;
+    &:hover {
+      transform: scale(1.05);
+      background: $color_2_1;
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
+}
