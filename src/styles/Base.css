@@ -33,7 +33,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #93f9b825;
+  background-color: var(--color_2_1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +51,7 @@
 
 .title_base {
   padding: 15px;
-  color: #3ca55c;
+  color: var(--color_4);
   letter-spacing: 0.7px;
 }
 
@@ -69,11 +69,11 @@
 }
 
 .text_container p a {
-  border-bottom: 1px solid #3ca55c;
+  border-bottom: 1px solid var(--color_4);
 }
 
 .text_container p a:hover {
-  color: #3ca55c;
+  color: var(--color_4);
 }
 
 .market_container {
@@ -96,7 +96,7 @@
   text-align: center;
   font-family: "Varela Round", sans-serif;
   margin: 20px;
-  color: #3ca55c;
+  color: var(--color_4);
 }
 
 table {

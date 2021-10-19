@@ -5,6 +5,7 @@
 //   $color_2_1: #93f9b825;
 //   $color_3: #003973;
 // }
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -15,6 +16,7 @@
     color: var(--color_0);
   }
 }
+
 .router_container {
   overflow: hidden;
 }
@@ -22,13 +24,13 @@
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Varela Round', sans-serif;
 //COLORS PATTERNS
-$color_0: #fff;
-$color_1: #3f3f3f;
-$color_2: #93f9b9;
-$color_2_1: #93f9b825;
-$color_3: #003973;
-$color_4: #3ca55c;
-$vars: (
+// $color_0: #fff;
+// $color_1: #3f3f3f;
+// $color_2: #93f9b9;
+// $color_2_1: #93f9b825;
+// $color_3: #003973;
+// $color_4: #3ca55c;
+$greenvars: (
   color_0: #fff,
   color_1: #3f3f3f,
   color_2: #93f9b9,
@@ -36,8 +38,25 @@ $vars: (
   color_3: #003973,
   color_4: #3ca55c,
 );
+$bluevars: (
+  colors_0: #fff,
+  colors_1: #3f3f3f,
+  colors_2: #12d8fa,
+  colors_2_1: #12d8fa25,
+  colors_3: #16a085,
+  colors_4: #1fa2ff,
+);
+$darkvars: (
+  colors_0: #1f1c2c,
+  colors_1: #1fa2ff,
+  colors_2: #3f3f3f,
+  colors_2_1: #3f3f3f,
+  colors_3: #eb3349,
+  colors_4: #928dab,
+);
+
 :root {
-  @each $prop, $value in $vars {
+  @each $prop, $value in $greenvars {
     --#{$prop}: #{$value};
   }
 }

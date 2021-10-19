@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { AnimatePresence } from "framer-motion";
+import Page404 from "./pages/Page404";
 import {
   // BrowserRouter as Router,
   Switch,
@@ -10,7 +11,7 @@ import {
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { useDispatch } from "react-redux";
-import { importAllCoins } from "./features/getcoinsSlice";
+import { importAllCoins, getCoinData } from "./features/getcoinsSlice";
 import Exchange from "./pages/Exchange";
 import News from "./pages/News";
 import "./index.css";
@@ -37,6 +38,11 @@ const App = () => {
             importedCoins: data.data.coins,
           })
         );
+        dispatch(
+          getCoinData({
+            coinDataTaker: data.data.stats,
+          })
+        );
       } catch (error) {
         console.log(error);
       }
@@ -52,7 +58,7 @@ const App = () => {
           <Route path="/" exact>
             <Base />
           </Route>
-          <Route path="/home" exact>
+          <Route path="/crypto" exact>
             <Home />
           </Route>
           <Route path="/exchange" exact>
@@ -67,6 +73,9 @@ const App = () => {
           </Route>
           <Route path="/crypto/:id">
             <Crypto />
+          </Route>
+          <Route path="*" exact>
+            <Page404 />
           </Route>
         </Switch>
       </AnimatePresence>

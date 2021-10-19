@@ -33,7 +33,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #93f9b825;
+  background-color: var(--color_2_1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +51,7 @@
 
 .title_crypto {
   padding: 15px;
-  color: #3ca55c;
+  color: var(--color_4);
   letter-spacing: 0.7px;
 }
 
@@ -69,7 +69,7 @@
 .crypto_desc_container h4,
 .crypto_desc_container h5,
 .crypto_desc_container h6 {
-  color: #3ca55c;
+  color: var(--color_4);
   margin: 30px 0 10px 0;
   font-family: "Varela Round", sans-serif;
 }
@@ -82,8 +82,8 @@
 }
 
 .crypto_desc_container a {
-  color: #3ca55c;
-  border-bottom: 1px solid #3ca55c;
+  color: var(--color_4);
+  border-bottom: 1px solid var(--color_4);
   padding-bottom: 3px;
 }
 
@@ -106,7 +106,7 @@
 
 .statistical_data_container .topside_data h3 {
   font-family: "Varela Round", sans-serif;
-  color: #3ca55c;
+  color: var(--color_4);
 }
 
 .botside_data {
@@ -142,7 +142,7 @@
 .leftside_data_container h3 {
   font-family: "Varela Round", sans-serif;
   padding: 15px;
-  color: #3ca55c;
+  color: var(--color_4);
 }
 
 .rightside_data_container {
@@ -166,7 +166,7 @@
 .rightside_data_container h3 {
   font-family: "Varela Round", sans-serif;
   padding: 15px;
-  color: #3ca55c;
+  color: var(--color_4);
 }
 
 .data_container {
@@ -175,14 +175,14 @@
   display: flex;
   padding: 20px 25px;
   width: 100%;
-  background-color: #93f9b825;
+  background-color: var(--color_2_1);
   font-weight: 600;
   letter-spacing: 0.8px;
-  border-bottom: 1px dashed #3ca55c;
+  border-bottom: 1px dashed var(--color_4);
 }
 
 .data_container:hover {
-  color: #3ca55c !important;
+  color: var(--color_4) !important;
 }
 
 .data_container p {
@@ -199,7 +199,7 @@
 }
 
 .data_container:nth-child(even) {
-  background-color: #93f9b9;
+  background-color: var(--color_2);
 }
 
 .data_container li {

@@ -24,6 +24,9 @@ const Diagram = ({ coinId, dropdownValue }) => {
   const [options, setoptions] = useState({});
   const coinData = coinId[0];
   const coinAllTime = coinData.allTimeHigh;
+  const [colorDiagram, setcolorDiagram] = useState(
+    getComputedStyle(document.documentElement).getPropertyValue("--color_2")
+  );
   if (coinFullData) {
     coinPrice = (+coinData.price).toFixed(3);
     coinMaxPrice = (+coinAllTime.price).toFixed(3);
@@ -52,7 +55,6 @@ const Diagram = ({ coinId, dropdownValue }) => {
         );
         const datas = await result.json();
         setcoinFullData(datas);
-        console.log(datas);
         const { data } = datas;
         for (let i = 0; i < data.history.length; i++) {
           xData.push(new Date(data.history[i].timestamp).toLocaleDateString());
@@ -65,7 +67,7 @@ const Diagram = ({ coinId, dropdownValue }) => {
               label: "Price In USD",
               data: yData,
               fill: false,
-              backgroundColor: "#93f9b9",
+              backgroundColor: colorDiagram,
               borderColor: "#333",
             },
           ],
@@ -86,6 +88,11 @@ const Diagram = ({ coinId, dropdownValue }) => {
     };
     getData();
   }, [coinData, dateValue]);
+  useEffect(() => {
+    setcolorDiagram(
+      getComputedStyle(document.documentElement).getPropertyValue("--color_2")
+    );
+  }, [xData, dropdownValue]);
   if (loading) return <LoaderComp />;
   return (
     <>

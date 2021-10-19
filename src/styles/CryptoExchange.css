@@ -33,7 +33,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #93f9b825;
+  background-color: var(--color_2_1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +51,7 @@
 
 .title_cryptoExchange {
   padding: 15px;
-  color: #3ca55c;
+  color: var(--color_4);
   letter-spacing: 0.7px;
 }
 
@@ -63,7 +63,7 @@
 .all_exchanges {
   margin: 20px;
   padding: 30px;
-  background-color: #93f9b9;
+  background-color: var(--color_2);
   border-radius: 12px;
 }
 
@@ -71,7 +71,7 @@
   padding: 5px;
   font-weight: 600;
   font-size: 18px;
-  background-color: #93f9b9;
+  background-color: var(--color_2);
 }
 
 .box_exchange_container {
@@ -104,7 +104,7 @@
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 20px;
-  background-color: #fff;
+  background-color: var(--color_0);
   border-radius: 12px;
   overflow: hidden;
   border: 3px solid transparent;
@@ -113,7 +113,7 @@
 }
 
 .single_cryptoexchange:hover {
-  border: 3px solid #93f9b9;
+  border: 3px solid var(--color_2);
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
 }
@@ -130,7 +130,7 @@
           align-items: center;
   width: 100%;
   padding: 15px;
-  background-color: #93f9b9;
+  background-color: var(--color_2);
 }
 
 .single_cryptoexchange .top_card_exchange .box_cryptoexchange_name {
@@ -204,15 +204,15 @@
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
   -webkit-transition: 0.2s ease transform;
   transition: 0.2s ease transform;
-  border-top: 1px solid #3ca55c;
+  border-top: 1px solid var(--color_4);
 }
 
 .pie_chart_container h3 {
   text-align: center;
   font-family: "Varela Round", sans-serif;
-  color: #3ca55c;
+  color: var(--color_4);
   padding: 10px 3px;
-  border-bottom: 3px solid #3ca55c;
+  border-bottom: 3px solid var(--color_4);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

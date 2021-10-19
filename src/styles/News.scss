@@ -1,7 +1,7 @@
 @import "../index.scss";
 .news_container {
   flex: 1;
-  background-color: $color_2_1;
+  background-color: var(--color_2_1);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -9,7 +9,7 @@
 }
 .title_news {
   padding: 15px;
-  color: $color_4;
+  color: var(--color_4);
   letter-spacing: 0.7px;
   h2 {
     font-family: "Varela Round", sans-serif;

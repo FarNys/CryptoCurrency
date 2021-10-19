@@ -1,7 +1,7 @@
 @import "../index.scss";
 .exchange_container {
   flex: 1;
-  background-color: $color_2_1;
+  background-color: var(--color_2_1);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -9,7 +9,7 @@
 }
 .title_exchange {
   padding: 15px;
-  color: $color_4;
+  color: var(--color_4);
   letter-spacing: 0.7px;
   h2 {
     font-family: "Varela Round", sans-serif;
@@ -31,27 +31,27 @@
 #demo-simple-select-label {
   font-size: 26px;
   font-weight: 600;
-  color: $color_1;
+  color: var(--color_1);
 }
 .select_crypto {
   margin-top: 30px !important;
   display: flex;
-  color: $color_0 !important;
+  color: var(--color_0) !important;
   background-color: none !important;
 }
 .select_crypto > * {
-  background-color: $color_4 !important;
+  background-color: var(--color_4) !important;
   padding: 15px !important;
   font-weight: 600 !important;
   border-radius: 12px !important;
 }
 .option_crypto {
-  background-color: $color_2 !important;
-  color: $color_1 !important;
+  background-color: var(--color_2) !important;
+  color: var(--color_1) !important;
 
   &:hover {
-    color: $color_0 !important;
-    background: $color_4 !important;
+    color: var(--color_0) !important;
+    background: var(--color_4) !important;
   }
 }
 .exchange_value_container {

@@ -40,7 +40,7 @@ tr {
 }
 
 tr:nth-child(odd) {
-  background-color: #93f9b825;
+  background-color: var(--color_2_1);
 }
 
 @media (max-width: 660px) {

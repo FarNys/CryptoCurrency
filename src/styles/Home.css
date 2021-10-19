@@ -33,7 +33,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #93f9b825;
+  background-color: var(--color_2_1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,11 +47,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 400px;
 }
 
 .title_home {
   padding: 15px;
-  color: #3ca55c;
+  color: var(--color_4);
   letter-spacing: 0.7px;
 }
 
@@ -85,8 +88,8 @@
 }
 
 .btn_container button {
-  border: 1px solid #93f9b9;
-  background: #93f9b9;
+  border: 1px solid var(--color_2);
+  background: var(--color_2);
   outline: none;
   padding: 8px 12px;
   font-size: 16px;
@@ -100,11 +103,36 @@
 .btn_container button:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  background: #93f9b825;
+  background: var(--color_2_1);
 }
 
 .btn_container button:active {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.otherdata_crypto {
+  margin: 20px;
+  margin-left: 50px;
+  padding: 30px;
+  background-color: var(--color_2);
+  border-radius: 12px;
+}
+
+.otherdata_crypto .crypto_other_datas {
+  padding: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: var(--color_2);
+}
+
+@media (max-width: 700px) {
+  .otherdata_crypto {
+    width: 85%;
+    margin: 20px auto;
+  }
+  .otherdata_crypto .crypto_other_datas {
+    font-size: 0.9rem;
+  }
 }
 /*# sourceMappingURL=Home.css.map */

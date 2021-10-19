@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import LoaderComp from "../components/LoaderComp";
 import { motion } from "framer-motion";
 
-// import { Doughnut } from "react-chartjs-2";
 import {
   getAllExchanges,
   selectExchange,
@@ -44,7 +43,7 @@ const CryptoExchange = () => {
   let colorData = [];
   const [information, setinformation] = useState({});
   const allExchanges = useSelector(selectExchange);
-  const allotherData = useSelector(selectotherData);
+  // const allotherData = useSelector(selectotherData);
   const allotherStat = useSelector(selectotherStat);
   const dispatch = useDispatch();
   useEffect(() => {

@@ -33,7 +33,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #93f9b825;
+  background-color: var(--color_2_1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +51,7 @@
 
 .title_exchange {
   padding: 15px;
-  color: #3ca55c;
+  color: var(--color_4);
   letter-spacing: 0.7px;
 }
 
@@ -88,7 +88,7 @@
 #demo-simple-select-label {
   font-size: 26px;
   font-weight: 600;
-  color: #3f3f3f;
+  color: var(--color_1);
 }
 
 .select_crypto {
@@ -96,25 +96,25 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #fff !important;
+  color: var(--color_0) !important;
   background-color: none !important;
 }
 
 .select_crypto > * {
-  background-color: #3ca55c !important;
+  background-color: var(--color_4) !important;
   padding: 15px !important;
   font-weight: 600 !important;
   border-radius: 12px !important;
 }
 
 .option_crypto {
-  background-color: #93f9b9 !important;
-  color: #3f3f3f !important;
+  background-color: var(--color_2) !important;
+  color: var(--color_1) !important;
 }
 
 .option_crypto:hover {
-  color: #fff !important;
-  background: #3ca55c !important;
+  color: var(--color_0) !important;
+  background: var(--color_4) !important;
 }
 
 .exchange_value_container {

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
-import { selectCoins } from "../features/getcoinsSlice";
+import backImage from "../dollar-circle-solid-240.png";
+import { selectCoins, selectCoinsData } from "../features/getcoinsSlice";
 import { useSelector } from "react-redux";
 import SingleCrypto from "../components/SingleCrypto";
 import "../styles/Home.css";
@@ -22,6 +23,7 @@ const Home = () => {
     },
   };
   let allCoins = useSelector(selectCoins);
+  let coinDatas = useSelector(selectCoinsData);
   const [index, setindex] = useState(9);
   const cryptoRef = useRef(null);
   allCoins = allCoins.slice(0, index);
@@ -56,6 +58,25 @@ const Home = () => {
       <div className="title_home">
         <h2>Crypto</h2>
       </div>
+      {coinDatas && (
+        <div className="otherdata_crypto">
+          <div className="crypto_other_datas">Total : {coinDatas.total}</div>
+
+          <div className="crypto_other_datas">
+            Tota 24h Volume : {coinDatas.total24hVolume}
+          </div>
+          <div className="crypto_other_datas">
+            Total Exchange : {coinDatas.totalExchanges}
+          </div>
+          <div className="crypto_other_datas">
+            Total MarketCap : {coinDatas.totalMarketCap}
+          </div>
+          <div className="crypto_other_datas">
+            Total Markets : {coinDatas.totalMarkets}
+          </div>
+        </div>
+      )}
+      {/* <h3>{coinDatas.total}</h3> */}
       {allCoins.length > 0 && (
         <motion.div
           ref={cryptoRef}

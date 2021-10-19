@@ -61,7 +61,6 @@ const Crypto = () => {
         setcrypto(data.data.coin);
         setcryptoDesc(HTMLReactParser(data.data.coin.description));
         setcryptoLinks(data.data.coin.links);
-        console.log(cryptoLinks);
         setloading(false);
       } catch (error) {
         console.log(error);

@@ -1,15 +1,19 @@
 @import "../index.scss";
 .home_container {
   flex: 1;
-  background-color: $color_2_1;
+  background-color: var(--color_2_1);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-size: 400px;
 }
 .title_home {
   padding: 15px;
-  color: $color_4;
+  color: var(--color_4);
   letter-spacing: 0.7px;
   h2 {
     font-family: "Varela Round", sans-serif;
@@ -28,8 +32,8 @@
   display: flex;
   justify-content: flex-end;
   button {
-    border: 1px solid $color_2;
-    background: $color_2;
+    border: 1px solid var(--color_2);
+    background: var(--color_2);
     outline: none;
     padding: 8px 12px;
     font-size: 16px;
@@ -39,10 +43,33 @@
     transition: 0.2s ease all;
     &:hover {
       transform: scale(1.05);
-      background: $color_2_1;
+      background: var(--color_2_1);
     }
     &:active {
       transform: scale(1);
+    }
+  }
+}
+.otherdata_crypto {
+  margin: 20px;
+  margin-left: 50px;
+  padding: 30px;
+  background-color: var(--color_2);
+  border-radius: 12px;
+
+  .crypto_other_datas {
+    padding: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: var(--color_2);
+  }
+}
+@media (max-width: 700px) {
+  .otherdata_crypto {
+    width: 85%;
+    margin: 20px auto;
+    .crypto_other_datas {
+      font-size: 0.9rem;
     }
   }
 }

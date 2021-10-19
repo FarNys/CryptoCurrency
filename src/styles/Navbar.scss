@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: $color_2;
+  background-color: var(--color_2);
   // box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   // h3 {
   //   font-family: "Varela Round", sans-serif;
@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: $color_2;
+  background-color: var(--color_2);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   h3 {
     font-family: "Varela Round", sans-serif;
@@ -46,8 +46,6 @@
     path {
       fill: transparent;
     }
-    .path {
-    }
   }
 }
 .no_logo_container {
@@ -56,9 +54,24 @@
 
   a {
     text-decoration: none;
-    color: $color_1;
+    color: var(--color_1);
     &:hover {
-      color: $color_2;
+      color: var(--color_2);
+    }
+    &:hover h3 {
+      transform: translateX(10px);
+    }
+  }
+  button {
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-family: "Varela Round", sans-serif;
+    font-size: 16px;
+    color: var(--color_1);
+    &:hover {
+      color: var(--color_2);
     }
     &:hover h3 {
       transform: translateX(10px);
@@ -72,7 +85,7 @@
   padding: 15px;
   transition: 0.2s ease;
   &:hover {
-    background-color: $color_1;
+    background-color: var(--color_1);
   }
 
   h3 {
@@ -90,6 +103,11 @@
   }
   .navbar_container {
     width: 50px;
+
+    button {
+      width: 50px;
+      display: flex;
+    }
   }
   .navbar_inside_container {
     width: auto;

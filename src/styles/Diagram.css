@@ -51,7 +51,7 @@
   text-align: center;
   padding: 15px;
   font-family: "Varela Round", sans-serif;
-  color: #3ca55c;
+  color: var(--color_4);
 }
 
 .top_part_diagram {
@@ -171,21 +171,21 @@
 .crypto_desc p {
   line-height: 25px;
   font-weight: 600;
-  color: #3f3f3f;
+  color: var(--color_1);
 }
 
 .crypto_desc p a {
-  color: #3ca55c;
-  border-bottom: 1px solid #3ca55c;
+  color: var(--color_4);
+  border-bottom: 1px solid var(--color_4);
 }
 
 .crypto_desc p a:hover {
-  color: #93f9b9;
-  border-bottom: 1px solid #93f9b9;
+  color: var(--color_2);
+  border-bottom: 1px solid var(--color_2);
 }
 
 .crypto_desc h3 {
-  color: #3ca55c;
+  color: var(--color_4);
   padding: 10px 0;
   font-family: "Varela Round", sans-serif;
 }
