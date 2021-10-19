@@ -51,7 +51,13 @@ const Exchange = () => {
       exit="exit"
     >
       <div className="title_exchange">
-        <h2>Exchange</h2>
+        <h2>Unit Exchange</h2>
+      </div>
+      <div className="exchange_text_container">
+        <p>
+          Unit Exchange means any exchange or consolidated price reporting
+          system on which prices for Units are quoted at any given time.
+        </p>
       </div>
 
       <div className="dropdown_container">

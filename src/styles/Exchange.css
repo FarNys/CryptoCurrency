@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -173,6 +174,14 @@
 .diagram_parent {
   width: 95%;
   margin: 30px auto;
+}
+
+.exchange_text_container {
+  width: 95%;
+  margin: 10px auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.6px;
 }
 
 @media (max-width: 1500px) {

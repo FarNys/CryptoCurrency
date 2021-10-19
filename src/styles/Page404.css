@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -50,7 +51,7 @@
   height: 100vh;
 }
 
-.image_404_icon {
+.title_page404 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,7 +67,7 @@
   height: 50vh;
 }
 
-.image_404_icon h2 {
+.title_page404 h2 {
   font-family: "Varela Round", sans-serif;
   position: relative;
 }

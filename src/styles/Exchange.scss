@@ -91,6 +91,13 @@
   width: 95%;
   margin: 30px auto;
 }
+.exchange_text_container {
+  width: 95%;
+  margin: 10px auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
 @media (max-width: 1500px) {
   .exchange_value_container {
     flex-direction: column;
