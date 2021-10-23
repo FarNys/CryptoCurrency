@@ -19,6 +19,7 @@
 .text_container {
   padding: 15px;
   p {
+    font-family: "Roboto", sans-serif;
     line-height: 25px;
     a {
       border-bottom: 1px solid var(--color_4);
@@ -71,9 +72,11 @@ table {
   tr {
     th {
       font-size: 0.65em;
+      font-family: "Roboto", sans-serif;
     }
     td {
       font-size: 0.6em;
+      font-family: "Roboto", sans-serif;
     }
   }
 }

@@ -4,7 +4,6 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
 }
 
 *::-moz-selection {
@@ -48,6 +47,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: "Roboto", sans-serif;
 }
 
 .title_news {
@@ -73,5 +73,6 @@
   margin: 20px auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  font-family: "Roboto", sans-serif;
 }
 /*# sourceMappingURL=News.css.map */

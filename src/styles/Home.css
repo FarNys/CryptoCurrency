@@ -4,7 +4,6 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
 }
 
 *::-moz-selection {
@@ -61,6 +60,61 @@
 
 .title_home h2 {
   font-family: "Varela Round", sans-serif;
+}
+
+.search_crypto {
+  position: relative;
+  padding: 10px 30px;
+  margin: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.search_crypto .search_icon {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  cursor: pointer;
+  left: 35px;
+  -webkit-box-flex: 0.3;
+      -ms-flex: 0.3;
+          flex: 0.3;
+  font-size: 30px;
+  border-right: 1px solid var(--color_4);
+}
+
+.search_crypto .search_icon:hover {
+  color: white;
+}
+
+.search_crypto .search_icon:active {
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+}
+
+.search_crypto input {
+  min-width: 200px;
+  -webkit-box-flex: 0.7;
+      -ms-flex: 0.7;
+          flex: 0.7;
+  padding: 12px 12px 12px 40px;
+  outline: none;
+  border: 1px solid transparent;
+  background-color: var(--color_2);
+  font-family: "Roboto", sans-serif;
+  border-radius: 6px;
+  font-size: 14px;
+  overflow: hidden;
 }
 
 .currency_box {

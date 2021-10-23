@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
-import backImage from "../dollar-circle-solid-240.png";
+import React, { useState, useRef, useEffect } from "react";
 import { selectCoins, selectCoinsData } from "../features/getcoinsSlice";
 import { useSelector } from "react-redux";
 import SingleCrypto from "../components/SingleCrypto";
 import "../styles/Home.css";
+import SearchIcon from "@material-ui/icons/Search";
 import { motion } from "framer-motion";
 const Home = () => {
   const containerVariants = {
@@ -22,15 +22,18 @@ const Home = () => {
       },
     },
   };
+  const [index, setindex] = useState(9);
+
   let allCoins = useSelector(selectCoins);
   let coinDatas = useSelector(selectCoinsData);
-  const [index, setindex] = useState(9);
+  const [filteredData, setfilteredData] = useState([]);
+
   const cryptoRef = useRef(null);
-  allCoins = allCoins.slice(0, index);
+  // allCoins = allCoins.slice(0, index);
   const cryptoNumHandler = (e) => {
     e.preventDefault();
-
     setindex(index + 9);
+    setfilteredData(allCoins.slice(0, index));
   };
   const collapsehandler = (e) => {
     e.preventDefault();
@@ -46,7 +49,26 @@ const Home = () => {
       },
     },
   };
-
+  const [searchValue, setsearchValue] = useState("");
+  const searchHandler = (e) => {
+    setsearchValue(e.target.value);
+  };
+  const searchSubmit = (e) => {
+    e.preventDefault();
+    if (searchValue === "") {
+      setfilteredData(filteredData);
+    }
+    if (searchValue !== "") {
+      setfilteredData(
+        allCoins.filter(
+          (el) => el.name.toLowerCase() === searchValue.toLowerCase().trim()
+        )
+      );
+    }
+  };
+  useEffect(() => {
+    setfilteredData(allCoins.slice(0, index));
+  }, [index, searchValue]);
   return (
     <motion.div
       variants={containerVariants}
@@ -58,6 +80,15 @@ const Home = () => {
       <div className="title_home">
         <h2>Crypto</h2>
       </div>
+      <div className="search_crypto">
+        <SearchIcon className="search_icon" onClick={searchSubmit} />
+        <input
+          type="text"
+          placeholder="type crypto name"
+          onChange={searchHandler}
+        />
+      </div>
+
       {coinDatas && (
         <div className="otherdata_crypto">
           <div className="crypto_other_datas">Total : {coinDatas.total}</div>
@@ -77,7 +108,7 @@ const Home = () => {
         </div>
       )}
       {/* <h3>{coinDatas.total}</h3> */}
-      {allCoins.length > 0 && (
+      {filteredData.length > 0 && (
         <motion.div
           ref={cryptoRef}
           className="currency_box"
@@ -85,7 +116,7 @@ const Home = () => {
           initial="hidden"
           animate="show"
         >
-          {allCoins.map((el, id) => (
+          {filteredData.map((el, id) => (
             <SingleCrypto el={el} id={id} key={el.uuid} />
           ))}
         </motion.div>
