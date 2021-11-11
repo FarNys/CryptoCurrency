@@ -50,6 +50,8 @@ const Diagram = ({ coinId, dropdownValue }) => {
               "x-rapidapi-host": "coinranking1.p.rapidapi.com",
               "x-rapidapi-key":
                 "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
+              "x-access-token":
+                "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
             },
           }
         );

@@ -30,7 +30,6 @@
 }
 
 .diagram_container {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,6 +44,7 @@
       align-self: flex-start;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  overflow: auto;
 }
 
 .diagram_container h3 {
@@ -212,5 +212,9 @@
   .diagram_data {
     margin: 5px;
   }
+}
+
+.diagram_crypto {
+  width: 100%;
 }
 /*# sourceMappingURL=Diagram.css.map */
