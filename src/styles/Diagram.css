@@ -42,12 +42,14 @@
           justify-content: flex-start;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  overflow: auto;
 }
 
-.diagram_container h3 {
+.diagram_container .diagram_datas {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.diagram_container .diagram_datas h3 {
   text-align: center;
   padding: 15px;
   font-family: "Varela Round", sans-serif;
@@ -91,8 +93,29 @@
           flex-direction: column;
 }
 
+.input_time h4 .green_change {
+  color: green;
+}
+
+.input_time h4 .red_change {
+  color: red;
+}
+
 .bot_part_diagram {
   padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .select_timer {
@@ -152,7 +175,7 @@
 
 .crypto_desc {
   padding: 5px;
-  margin: 20px auto;
+  margin: 40px auto;
 }
 
 .crypto_desc h4 {
@@ -192,6 +215,10 @@
   font-family: "Varela Round", sans-serif;
 }
 
+.diagram_crypto {
+  width: 100%;
+}
+
 @media (max-width: 600px) {
   .diagram_container h3 {
     font-size: 13px;
@@ -204,17 +231,22 @@
     font-size: 11px !important;
   }
   .top_part_diagram {
-    padding: 10px;
+    padding: 0;
   }
   .bot_part_diagram {
-    padding: 10px;
-  }
-  .diagram_data {
-    margin: 5px;
+    padding: 0;
   }
 }
 
-.diagram_crypto {
-  width: 100%;
+@media (max-width: 700px) {
+  .diagram_parent {
+    display: none;
+  }
+}
+
+@media (min-width: 700px) {
+  .diagram_parent_mobile {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Diagram.css.map */

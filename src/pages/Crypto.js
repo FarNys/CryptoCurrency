@@ -60,6 +60,7 @@ const Crypto = () => {
           }
         );
         const data = await res.json();
+        console.log(data);
         setcrypto(data.data.coin);
         setcryptoDesc(HTMLReactParser(data.data.coin.description));
         setcryptoLinks(data.data.coin.links);

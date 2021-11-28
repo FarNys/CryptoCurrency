@@ -87,10 +87,13 @@ const CryptoExchange = () => {
           },
         ],
       });
-      setloading(false);
     };
+    setloading(false);
+
+    console.log("crypto xchange");
+    console.log(information);
     getExchanges();
-  }, [dispatch]);
+  }, [dispatch, loading]);
   if (loading) return <LoaderComp />;
   return (
     <motion.div

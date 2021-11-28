@@ -11,9 +11,10 @@ import { Line } from "react-chartjs-2";
 import "../styles/Diagram.css";
 import "../styles/Exchange.css";
 import LoaderComp from "./LoaderComp";
-const Diagram = ({ coinId, dropdownValue }) => {
+const DiagramMobile = ({ coinId, dropdownValue }) => {
   const [coinFullData, setcoinFullData] = useState();
   const [loading, setloading] = useState(false);
+
   let yData = [];
   let xData = [];
   let coinPrice;
@@ -60,10 +61,48 @@ const Diagram = ({ coinId, dropdownValue }) => {
         console.log(datas);
         setcoinFullData(datas);
         const { data } = datas;
-        for (let i = 0; i < data.history.length; i++) {
-          xData.push(new Date(data.history[i].timestamp).toLocaleDateString());
-          yData.push(data.history[i].price);
+        if (dateValue === "24h") {
+          for (let i = 0; i < data.history.length; i = i + 40) {
+            xData.push(
+              new Date(data.history[i].timestamp).toLocaleDateString()
+            );
+            yData.push(data.history[i].price);
+          }
         }
+        if (dateValue === "7d") {
+          for (let i = 0; i < data.history.length; i = i + 30) {
+            xData.push(
+              new Date(data.history[i].timestamp).toLocaleDateString()
+            );
+            yData.push(data.history[i].price);
+          }
+        }
+        if (dateValue === "30d") {
+          for (let i = 0; i < data.history.length; i = i + 85) {
+            xData.push(
+              new Date(data.history[i].timestamp).toLocaleDateString()
+            );
+            yData.push(data.history[i].price);
+          }
+        }
+        if (dateValue === "1y") {
+          for (let i = 0; i < data.history.length; i = i + 50) {
+            xData.push(
+              new Date(data.history[i].timestamp).toLocaleDateString()
+            );
+            yData.push(data.history[i].price);
+          }
+        }
+        if (dateValue === "5y") {
+          for (let i = 0; i < data.history.length; i = i + 200) {
+            xData.push(
+              new Date(data.history[i].timestamp).toLocaleDateString()
+            );
+            yData.push(data.history[i].price);
+          }
+        }
+
+        console.log(typeof dateValue);
         setinformation({
           labels: xData,
           datasets: [
@@ -102,7 +141,7 @@ const Diagram = ({ coinId, dropdownValue }) => {
   if (loading) return <LoaderComp />;
   return (
     <>
-      <div className="diagram_container">
+      <div className="diagram_container diagram_container_mobile">
         <div className="diagram_datas">
           <h3>{dropdownValue.toUpperCase()}</h3>
 
@@ -150,8 +189,8 @@ const Diagram = ({ coinId, dropdownValue }) => {
               <img src={coinId[0].iconUrl} alt={coinId[0].name} />
             </div>
           </div>
-          <div className="bot_part_diagram ">
-            <div className="diagram_crypto ">
+          <div className="bot_part_diagram bot_part_diagram_mobile">
+            <div className="diagram_crypto diagram_crypto_mobile">
               <Line
                 className="line_size line_size_mobile"
                 data={information}
@@ -178,4 +217,4 @@ const Diagram = ({ coinId, dropdownValue }) => {
   );
 };
 
-export default Diagram;
+export default DiagramMobile;

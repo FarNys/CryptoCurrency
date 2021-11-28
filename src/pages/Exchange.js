@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ExchangeTrade from "../components/ExchangeTrade";
-import { selectCoins } from "../features/getcoinsSlice";
+import {
+  getCoinData,
+  importAllCoins,
+  selectCoins,
+} from "../features/getcoinsSlice";
 import "../styles/Exchange.css";
 import Box from "@material-ui/core/Box";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -9,6 +13,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import ExchangeTradeReverse from "../components/ExchangeTradeReverse";
+import DiagramMobile from "../components/DiagramMobile";
 import Diagram from "../components/Diagram";
 import { motion } from "framer-motion";
 
@@ -29,6 +34,38 @@ const Exchange = () => {
       },
     },
   };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await fetch("https://coinranking1.p.rapidapi.com/coins", {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+            "x-rapidapi-key":
+              "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
+            "x-access-token":
+              "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
+          },
+        });
+        const data = await res.json();
+        console.log(data);
+        dispatch(
+          importAllCoins({
+            importedCoins: data.data.coins,
+          })
+        );
+        dispatch(
+          getCoinData({
+            coinDataTaker: data.data.stats,
+          })
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, [dispatch]);
   const allCoins = useSelector(selectCoins);
   const [dropdownValue, setdropdownValue] = useState(
     allCoins.length > 0 && allCoins[0].name
@@ -41,7 +78,8 @@ const Exchange = () => {
     setcoinId(
       allCoins.filter((item) => item.name.toLowerCase() === dropdownValue)
     );
-  }, [dropdownValue]);
+    console.log("exchange++");
+  }, [dropdownValue, allCoins]);
   return (
     <motion.div
       className="exchange_container"
@@ -97,6 +135,11 @@ const Exchange = () => {
         {" "}
         {coinId.length > 0 && (
           <Diagram coinId={coinId} dropdownValue={dropdownValue} />
+        )}
+      </div>
+      <div className="diagram_parent_mobile">
+        {coinId.length > 0 && (
+          <DiagramMobile coinId={coinId} dropdownValue={dropdownValue} />
         )}
       </div>
     </motion.div>

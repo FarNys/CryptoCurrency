@@ -171,7 +171,8 @@
   height: 100%;
 }
 
-.diagram_parent {
+.diagram_parent,
+.diagram_parent_mobile {
   width: 95%;
   margin: 30px auto;
 }
