@@ -12,9 +12,7 @@ import "../styles/CryptoExchange.css";
 import SingleCryptoExchange from "../components/SingleCryptoExchange";
 import { useDispatch, useSelector } from "react-redux";
 import DoughnutContainer from "../components/DoughnutContainer";
-import { useHistory } from "react-router-dom";
 const CryptoExchange = () => {
-  const history = useHistory();
   const containerVariants = {
     start: { opacity: 0, x: "-20vw" },
     finish: {
@@ -68,7 +66,6 @@ const CryptoExchange = () => {
           }
         );
         const data = await res.json();
-        console.log(data, information);
         dispatch(
           getAllExchanges({
             exchangesData: data.data.exchanges,
@@ -100,10 +97,6 @@ const CryptoExchange = () => {
       };
       getExchanges();
     }
-
-    console.log("crypto xchange");
-    console.log(information);
-    console.log(allExchanges);
     return () => (cleanUp = true);
   }, [dispatch]);
 

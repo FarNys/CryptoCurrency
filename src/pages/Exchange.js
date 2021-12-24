@@ -49,7 +49,6 @@ const Exchange = () => {
           },
         });
         const data = await res.json();
-        console.log(data);
         dispatch(
           importAllCoins({
             importedCoins: data.data.coins,
