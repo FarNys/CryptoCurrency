@@ -224,6 +224,10 @@
           transform: scale(1.01);
 }
 
+.pie_chart_container.hidden {
+  display: none;
+}
+
 .doughnut_diagram {
   margin-bottom: 30px;
   margin-top: 30px;

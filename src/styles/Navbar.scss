@@ -30,22 +30,14 @@
 
 .logo_container {
   display: flex;
-  justify-content: center;
-  padding-top: 10px;
+  justify-content: flex-start;
+  padding: 10px;
   align-items: center;
   // padding-left: 20px;
   width: 100%;
   color: var(--color_1);
-  .svg_container {
-    width: 100%;
-    max-width: 50px;
-    text-align: center;
-    fill: transparent;
-    stroke-width: 2px;
-    stroke: var(--color_1);
-    path {
-      fill: transparent;
-    }
+  img {
+    transform: scale(1.5);
   }
 }
 .no_logo_container {

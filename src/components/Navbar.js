@@ -45,32 +45,7 @@ const Navbar = () => {
     <div className="navbar_container">
       <div className="navbar_inside_container">
         <div className="logo_container">
-          <svg width="50" height="50" className="svg_container">
-            <motion.path
-              initial={{ opacity: 0, pathLength: 0 }}
-              animate={{
-                opacity: 1,
-                pathLength: 1,
-                transition: {
-                  duration: 1,
-                },
-              }}
-              d="M0 0 L50 0 L25 50 Z"
-            />
-            <motion.path
-              initial={{ opacity: 0, pathLength: 0 }}
-              animate={{
-                opacity: 1,
-                pathLength: 1,
-                transition: {
-                  duration: 1,
-                  delay: 0.7,
-                },
-              }}
-              className="path"
-              d="M30 10 L20 10 L20 20 L30 20"
-            />
-          </svg>
+          <img src="images/bitcoin.png" alt="bitcoin-Logo" />
         </div>
         <div className="no_logo_container">
           <Link to="/" className="link_container">

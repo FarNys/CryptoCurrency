@@ -42,95 +42,97 @@ const DiagramMobile = ({ coinId, dropdownValue }) => {
   const [coinDesc, setcoinDesc] = useState();
   useEffect(() => {
     setloading(true);
-    const getData = async () => {
-      try {
-        const result = await fetch(
-          `https://coinranking1.p.rapidapi.com/coin/${coinData.id}/history/${dateValue}`,
-          {
-            method: "GET",
-            headers: {
-              "x-rapidapi-host": "coinranking1.p.rapidapi.com",
-              "x-rapidapi-key":
-                "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
-              "x-access-token":
-                "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
-            },
-          }
-        );
-        const datas = await result.json();
-        console.log(datas);
-        setcoinFullData(datas);
-        const { data } = datas;
-        if (dateValue === "24h") {
-          for (let i = 0; i < data.history.length; i = i + 40) {
-            xData.push(
-              new Date(data.history[i].timestamp).toLocaleDateString()
-            );
-            yData.push(data.history[i].price);
-          }
-        }
-        if (dateValue === "7d") {
-          for (let i = 0; i < data.history.length; i = i + 30) {
-            xData.push(
-              new Date(data.history[i].timestamp).toLocaleDateString()
-            );
-            yData.push(data.history[i].price);
-          }
-        }
-        if (dateValue === "30d") {
-          for (let i = 0; i < data.history.length; i = i + 85) {
-            xData.push(
-              new Date(data.history[i].timestamp).toLocaleDateString()
-            );
-            yData.push(data.history[i].price);
-          }
-        }
-        if (dateValue === "1y") {
-          for (let i = 0; i < data.history.length; i = i + 50) {
-            xData.push(
-              new Date(data.history[i].timestamp).toLocaleDateString()
-            );
-            yData.push(data.history[i].price);
-          }
-        }
-        if (dateValue === "5y") {
-          for (let i = 0; i < data.history.length; i = i + 200) {
-            xData.push(
-              new Date(data.history[i].timestamp).toLocaleDateString()
-            );
-            yData.push(data.history[i].price);
-          }
-        }
-
-        console.log(typeof dateValue);
-        setinformation({
-          labels: xData,
-          datasets: [
+    if (typeof coinData.id !== undefined) {
+      const getData = async () => {
+        try {
+          const result = await fetch(
+            `https://coinranking1.p.rapidapi.com/coin/${coinData.id}/history/${dateValue}`,
             {
-              label: "Price In USD",
-              data: yData,
-              fill: false,
-              backgroundColor: colorDiagram,
-              borderColor: "#333",
+              method: "GET",
+              headers: {
+                "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+                "x-rapidapi-key":
+                  "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
+                "x-access-token":
+                  "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
+              },
+            }
+          );
+          const datas = await result.json();
+          console.log(datas);
+          setcoinFullData(datas);
+          const { data } = datas;
+          if (dateValue === "24h") {
+            for (let i = 0; i < data.history.length; i = i + 40) {
+              xData.push(
+                new Date(data.history[i].timestamp).toLocaleDateString()
+              );
+              yData.push(data.history[i].price);
+            }
+          }
+          if (dateValue === "7d") {
+            for (let i = 0; i < data.history.length; i = i + 30) {
+              xData.push(
+                new Date(data.history[i].timestamp).toLocaleDateString()
+              );
+              yData.push(data.history[i].price);
+            }
+          }
+          if (dateValue === "30d") {
+            for (let i = 0; i < data.history.length; i = i + 85) {
+              xData.push(
+                new Date(data.history[i].timestamp).toLocaleDateString()
+              );
+              yData.push(data.history[i].price);
+            }
+          }
+          if (dateValue === "1y") {
+            for (let i = 0; i < data.history.length; i = i + 50) {
+              xData.push(
+                new Date(data.history[i].timestamp).toLocaleDateString()
+              );
+              yData.push(data.history[i].price);
+            }
+          }
+          if (dateValue === "5y") {
+            for (let i = 0; i < data.history.length; i = i + 200) {
+              xData.push(
+                new Date(data.history[i].timestamp).toLocaleDateString()
+              );
+              yData.push(data.history[i].price);
+            }
+          }
+
+          console.log(typeof dateValue);
+          setinformation({
+            labels: xData,
+            datasets: [
+              {
+                label: "Price In USD",
+                data: yData,
+                fill: false,
+                backgroundColor: colorDiagram,
+                borderColor: "#333",
+              },
+            ],
+          });
+          setoptions({
+            plugins: {
+              title: {
+                display: true,
+                text: dropdownValue.toUpperCase() + " Diagram",
+              },
             },
-          ],
-        });
-        setoptions({
-          plugins: {
-            title: {
-              display: true,
-              text: dropdownValue.toUpperCase() + " Diagram",
-            },
-          },
-        });
-        setcoinDesc(HTMLReactParser(coinData.description));
-        setloading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    console.log(88);
-    getData();
+          });
+          setcoinDesc(HTMLReactParser(coinData.description));
+          setloading(false);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      console.log(88);
+      getData();
+    }
   }, [coinData, dateValue]);
   useEffect(() => {
     setcolorDiagram(

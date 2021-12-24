@@ -12,7 +12,9 @@ import "../styles/CryptoExchange.css";
 import SingleCryptoExchange from "../components/SingleCryptoExchange";
 import { useDispatch, useSelector } from "react-redux";
 import DoughnutContainer from "../components/DoughnutContainer";
+import { useHistory } from "react-router-dom";
 const CryptoExchange = () => {
+  const history = useHistory();
   const containerVariants = {
     start: { opacity: 0, x: "-20vw" },
     finish: {
@@ -42,58 +44,69 @@ const CryptoExchange = () => {
   let rData = [];
   let colorData = [];
   const [information, setinformation] = useState({});
+  const [hidden, sethidden] = useState(true);
   const allExchanges = useSelector(selectExchange);
   // const allotherData = useSelector(selectotherData);
   const allotherStat = useSelector(selectotherStat);
   const dispatch = useDispatch();
   useEffect(() => {
+    let cleanUp = false;
     setloading(true);
-    const getExchanges = async () => {
-      const res = await fetch("https://coinranking1.p.rapidapi.com/exchanges", {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "coinranking1.p.rapidapi.com",
-          "x-rapidapi-key":
-            "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
-          "x-access-token":
-            "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
-        },
-      });
-      const data = await res.json();
-      dispatch(
-        getAllExchanges({
-          exchangesData: data.data.exchanges,
-          otherDatas: data.data.currencies,
-          otherStats: data.data.stats,
-        })
-      );
-      for (let i = 0; i < allExchanges.length; i++) {
-        labelData.push(allExchanges[i].name);
-      }
-      for (let j = 0; j < allExchanges.length; j++) {
-        rData.push(allExchanges[j].marketShare);
-      }
-      for (let k = 0; k < allExchanges.length; k++) {
-        colorData.push(getRandomColor());
-      }
-
-      setinformation({
-        labels: labelData,
-        datasets: [
+    if (!cleanUp) {
+      const getExchanges = async () => {
+        const res = await fetch(
+          "https://coinranking1.p.rapidapi.com/exchanges",
           {
-            label: "Pie Chart!!",
-            data: rData,
-            backgroundColor: colorData,
-          },
-        ],
-      });
-    };
-    setloading(false);
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+              "x-rapidapi-key":
+                "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
+              "x-access-token":
+                "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
+            },
+          }
+        );
+        const data = await res.json();
+        console.log(data, information);
+        dispatch(
+          getAllExchanges({
+            exchangesData: data.data.exchanges,
+            otherDatas: data.data.currencies,
+            otherStats: data.data.stats,
+          })
+        );
+        for (let i = 0; i < allExchanges.length; i++) {
+          labelData.push(allExchanges[i].name);
+        }
+        for (let j = 0; j < allExchanges.length; j++) {
+          rData.push(allExchanges[j].marketShare);
+        }
+        for (let k = 0; k < allExchanges.length; k++) {
+          colorData.push(getRandomColor());
+        }
+
+        setinformation({
+          labels: labelData,
+          datasets: [
+            {
+              label: "Pie Chart!!",
+              data: rData,
+              backgroundColor: colorData,
+            },
+          ],
+        });
+        setloading(false);
+      };
+      getExchanges();
+    }
 
     console.log("crypto xchange");
     console.log(information);
-    getExchanges();
-  }, [dispatch, loading]);
+    console.log(allExchanges);
+    return () => (cleanUp = true);
+  }, [dispatch]);
+
   if (loading) return <LoaderComp />;
   return (
     <motion.div
@@ -113,12 +126,16 @@ const CryptoExchange = () => {
         <div className="inner_exchange">Volume : {allotherStat.volume}</div>
       </div>
 
-      {information && (
-        <div className="pie_chart_container">
+      {
+        <div
+          className={
+            !hidden ? "pie_chart_container hidden" : "pie_chart_container"
+          }
+        >
           <h3>Market Share</h3>
           <DoughnutContainer information={information} />
         </div>
-      )}
+      }
       <div className="box_exchange_container">
         {allExchanges.map((item) => (
           <SingleCryptoExchange item={item} key={item.uuid} />

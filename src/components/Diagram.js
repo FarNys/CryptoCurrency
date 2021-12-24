@@ -24,6 +24,7 @@ const Diagram = ({ coinId, dropdownValue }) => {
   const [dateValue, setdateValue] = useState("24h");
   const [options, setoptions] = useState({});
   const coinData = coinId[0];
+  console.log(coinData);
   const coinAllTime = coinData.allTimeHigh;
   const [colorDiagram, setcolorDiagram] = useState(
     getComputedStyle(document.documentElement).getPropertyValue("--color_2")
@@ -41,57 +42,62 @@ const Diagram = ({ coinId, dropdownValue }) => {
   const [coinDesc, setcoinDesc] = useState();
   useEffect(() => {
     setloading(true);
-    const getData = async () => {
-      try {
-        const result = await fetch(
-          `https://coinranking1.p.rapidapi.com/coin/${coinData.id}/history/${dateValue}`,
-          {
-            method: "GET",
-            headers: {
-              "x-rapidapi-host": "coinranking1.p.rapidapi.com",
-              "x-rapidapi-key":
-                "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
-              "x-access-token":
-                "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
-            },
-          }
-        );
-        const datas = await result.json();
-        console.log(datas);
-        setcoinFullData(datas);
-        const { data } = datas;
-        for (let i = 0; i < data.history.length; i++) {
-          xData.push(new Date(data.history[i].timestamp).toLocaleDateString());
-          yData.push(data.history[i].price);
-        }
-        setinformation({
-          labels: xData,
-          datasets: [
+    console.log(typeof coinData.id);
+    if (typeof coinData.id !== undefined) {
+      const getData = async () => {
+        try {
+          const result = await fetch(
+            `https://coinranking1.p.rapidapi.com/coin/${coinData.id}/history/${dateValue}`,
             {
-              label: "Price In USD",
-              data: yData,
-              fill: false,
-              backgroundColor: colorDiagram,
-              borderColor: "#333",
+              method: "GET",
+              headers: {
+                "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+                "x-rapidapi-key":
+                  "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
+                "x-access-token":
+                  "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
+              },
+            }
+          );
+          const datas = await result.json();
+          console.log(datas);
+          setcoinFullData(datas);
+          const { data } = datas;
+          for (let i = 0; i < data.history.length; i++) {
+            xData.push(
+              new Date(data.history[i].timestamp).toLocaleDateString()
+            );
+            yData.push(data.history[i].price);
+          }
+          setinformation({
+            labels: xData,
+            datasets: [
+              {
+                label: "Price In USD",
+                data: yData,
+                fill: false,
+                backgroundColor: colorDiagram,
+                borderColor: "#333",
+              },
+            ],
+          });
+          setoptions({
+            plugins: {
+              title: {
+                display: true,
+                text: dropdownValue.toUpperCase() + " Diagram",
+              },
             },
-          ],
-        });
-        setoptions({
-          plugins: {
-            title: {
-              display: true,
-              text: dropdownValue.toUpperCase() + " Diagram",
-            },
-          },
-        });
-        setcoinDesc(HTMLReactParser(coinData.description));
-        setloading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    console.log(88);
-    getData();
+          });
+          setcoinDesc(HTMLReactParser(coinData.description));
+          setloading(false);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      console.log(88);
+      getData();
+    }
   }, [coinData, dateValue]);
   useEffect(() => {
     setcolorDiagram(

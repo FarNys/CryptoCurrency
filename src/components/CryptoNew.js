@@ -8,7 +8,7 @@ const CryptoNew = ({ el }) => {
     show: { scale: 1, opacity: 1 },
   };
   return (
-    <a href={el.url}>
+    <a href={el.url} className="news_link_tag">
       <motion.div variants={singleVariants} className="single_news_container">
         <div className="card_sideOne">
           <div className="card_image">
@@ -16,7 +16,7 @@ const CryptoNew = ({ el }) => {
             {image && <img src={image.thumbnail.contentUrl} alt={el.name} />}
           </div>
 
-          <p>{el.description}</p>
+          <p className="text_desc_news">{el.description}</p>
           <div className="date_category">
             <span>{new Date(el.datePublished).toLocaleString()}</span>
             <span>{el.category || "No Category"}</span>

@@ -79,10 +79,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 10px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -90,17 +90,9 @@
   color: var(--color_1);
 }
 
-.logo_container .svg_container {
-  width: 100%;
-  max-width: 50px;
-  text-align: center;
-  fill: transparent;
-  stroke-width: 2px;
-  stroke: var(--color_1);
-}
-
-.logo_container .svg_container path {
-  fill: transparent;
+.logo_container img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .no_logo_container {
