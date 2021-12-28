@@ -24,7 +24,7 @@ const Diagram = ({ coinId, dropdownValue }) => {
   const [dateValue, setdateValue] = useState("24h");
   const [options, setoptions] = useState({});
   const coinData = coinId[0];
-  console.log(coinData);
+  // console.log(coinData);
   const coinAllTime = coinData.allTimeHigh;
   const [colorDiagram, setcolorDiagram] = useState(
     getComputedStyle(document.documentElement).getPropertyValue("--color_2")
@@ -42,7 +42,7 @@ const Diagram = ({ coinId, dropdownValue }) => {
   const [coinDesc, setcoinDesc] = useState();
   useEffect(() => {
     setloading(true);
-    console.log(typeof coinData.id);
+    // console.log(typeof coinData.id);
     if (typeof coinData.id !== undefined) {
       const getData = async () => {
         try {

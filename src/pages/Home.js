@@ -3,7 +3,7 @@ import { selectCoins, selectCoinsData } from "../features/getcoinsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import SingleCrypto from "../components/SingleCrypto";
 import "../styles/Home.css";
-import SearchIcon from "@material-ui/icons/Search";
+// import SearchIcon from "@material-ui/icons/Search";
 import { motion } from "framer-motion";
 import { importAllCoins, getCoinData } from "../features/getcoinsSlice";
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
 
   let allCoins = useSelector(selectCoins);
   let coinDatas = useSelector(selectCoinsData);
-  // const [filteredData, setfilteredData] = useState(allCoins.slice(0, index));
+
   const [arr, setarr] = useState([]);
   const cryptoRef = useRef(null);
   // allCoins = allCoins.slice(0, index);
@@ -51,27 +51,7 @@ const Home = () => {
       },
     },
   };
-  const [searchValue, setsearchValue] = useState("");
-  // const searchHandler = (e) => {
-  //   setsearchValue(e.target.value);
-  // };
-  // const searchSubmit = (e) => {
-  //   e.preventDefault();
-  //   const x = allCoins.map((el) => el.name);
-  //   const y = x.filter((item) =>
-  //     item.toLowerCase().includes(searchValue.toLowerCase().trim())
-  //   );
-  //   const z = allCoins.forEach((item) => {
-  //     for (let i = 0; i < y.length; i++) {
-  //       if (item.name === y[i]) {
-  //         arr.push(item);
-  //       }
-  //     }
-  //   });
-  //   setarr(arr);
-  //   console.log(arr);
-  //   console.log(allCoins);
-  // };
+  // const [searchValue, setsearchValue] = useState("");
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -88,7 +68,7 @@ const Home = () => {
           },
         });
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
         dispatch(
           importAllCoins({
             importedCoins: data.data.coins,
@@ -107,7 +87,7 @@ const Home = () => {
   }, [dispatch]);
   useEffect(() => {
     setarr(allCoins.slice(0, index));
-    console.log(55);
+    // console.log(55);
   }, [index, allCoins]);
 
   return (

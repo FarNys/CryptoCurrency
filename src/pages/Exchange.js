@@ -77,7 +77,7 @@ const Exchange = () => {
     setcoinId(
       allCoins.filter((item) => item.name.toLowerCase() === dropdownValue)
     );
-    console.log("exchange++");
+    // console.log("exchange++");
   }, [dropdownValue, allCoins]);
   return (
     <motion.div

@@ -59,7 +59,7 @@ const DiagramMobile = ({ coinId, dropdownValue }) => {
             }
           );
           const datas = await result.json();
-          console.log(datas);
+          // console.log(datas);
           setcoinFullData(datas);
           const { data } = datas;
           if (dateValue === "24h") {
@@ -103,7 +103,7 @@ const DiagramMobile = ({ coinId, dropdownValue }) => {
             }
           }
 
-          console.log(typeof dateValue);
+          // console.log(typeof dateValue);
           setinformation({
             labels: xData,
             datasets: [
@@ -130,7 +130,7 @@ const DiagramMobile = ({ coinId, dropdownValue }) => {
           console.log(error);
         }
       };
-      console.log(88);
+      // console.log(88);
       getData();
     }
   }, [coinData, dateValue]);
