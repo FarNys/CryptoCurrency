@@ -48,10 +48,11 @@ const CryptoExchange = () => {
   const allotherStat = useSelector(selectotherStat);
   const dispatch = useDispatch();
   useEffect(() => {
-    let cleanUp = false;
+    let cleanUp = true;
     setloading(true);
-    if (!cleanUp) {
-      const getExchanges = async () => {
+
+    const getExchanges = async () => {
+      try {
         const res = await fetch(
           "https://coinranking1.p.rapidapi.com/exchanges",
           {
@@ -65,39 +66,44 @@ const CryptoExchange = () => {
             },
           }
         );
-        const data = await res.json();
-        dispatch(
-          getAllExchanges({
-            exchangesData: data.data.exchanges,
-            otherDatas: data.data.currencies,
-            otherStats: data.data.stats,
-          })
-        );
-        for (let i = 0; i < allExchanges.length; i++) {
-          labelData.push(allExchanges[i].name);
-        }
-        for (let j = 0; j < allExchanges.length; j++) {
-          rData.push(allExchanges[j].marketShare);
-        }
-        for (let k = 0; k < allExchanges.length; k++) {
-          colorData.push(getRandomColor());
-        }
+        if (cleanUp) {
+          const data = await res.json();
+          dispatch(
+            getAllExchanges({
+              exchangesData: data.data.exchanges,
+              otherDatas: data.data.currencies,
+              otherStats: data.data.stats,
+            })
+          );
+          for (let i = 0; i < allExchanges.length; i++) {
+            labelData.push(allExchanges[i].name);
+          }
+          for (let j = 0; j < allExchanges.length; j++) {
+            rData.push(allExchanges[j].marketShare);
+          }
+          for (let k = 0; k < allExchanges.length; k++) {
+            colorData.push(getRandomColor());
+          }
 
-        setinformation({
-          labels: labelData,
-          datasets: [
-            {
-              label: "Pie Chart!!",
-              data: rData,
-              backgroundColor: colorData,
-            },
-          ],
-        });
-        setloading(false);
-      };
-      getExchanges();
-    }
-    return () => (cleanUp = true);
+          setinformation({
+            labels: labelData,
+            datasets: [
+              {
+                label: "Pie Chart!!",
+                data: rData,
+                backgroundColor: colorData,
+              },
+            ],
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      }
+      setloading(false);
+    };
+    getExchanges();
+
+    return () => (cleanUp = false);
   }, [dispatch]);
 
   if (loading) return <LoaderComp />;

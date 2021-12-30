@@ -42,7 +42,7 @@ const DiagramMobile = ({ coinId, dropdownValue }) => {
   const [coinDesc, setcoinDesc] = useState();
   useEffect(() => {
     setloading(true);
-    if (typeof coinData.id !== undefined) {
+    if (coinData.id !== undefined) {
       const getData = async () => {
         try {
           const result = await fetch(
@@ -138,7 +138,7 @@ const DiagramMobile = ({ coinId, dropdownValue }) => {
     setcolorDiagram(
       getComputedStyle(document.documentElement).getPropertyValue("--color_2")
     );
-    console.log(77);
+    // console.log(77);
   }, [xData, dropdownValue]);
   if (loading) return <LoaderComp />;
   return (

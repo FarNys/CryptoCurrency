@@ -102,7 +102,7 @@ const Exchange = () => {
           <Box sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label" className="inputLabel">
-                Choose Currency
+                Choose
               </InputLabel>
               <Select
                 labelId="demo-simple-select-label"

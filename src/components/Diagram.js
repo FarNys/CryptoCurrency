@@ -5,6 +5,7 @@ import {
   MenuItem,
   Select,
 } from "@material-ui/core";
+import { cleanup } from "@testing-library/react";
 import HTMLReactParser from "html-react-parser";
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
@@ -41,9 +42,11 @@ const Diagram = ({ coinId, dropdownValue }) => {
   };
   const [coinDesc, setcoinDesc] = useState();
   useEffect(() => {
+    // console.log(coinData.id);
+    let cleanUp = true;
     setloading(true);
     // console.log(typeof coinData.id);
-    if (typeof coinData.id !== undefined) {
+    if (coinData.id !== undefined) {
       const getData = async () => {
         try {
           const result = await fetch(
@@ -59,51 +62,56 @@ const Diagram = ({ coinId, dropdownValue }) => {
               },
             }
           );
-          const datas = await result.json();
-          console.log(datas);
-          setcoinFullData(datas);
-          const { data } = datas;
-          for (let i = 0; i < data.history.length; i++) {
-            xData.push(
-              new Date(data.history[i].timestamp).toLocaleDateString()
-            );
-            yData.push(data.history[i].price);
+          if (cleanup) {
+            const datas = await result.json();
+            // console.log(datas);
+            setcoinFullData(datas);
+            const { data } = datas;
+            for (let i = 0; i < data.history.length; i++) {
+              xData.push(
+                new Date(data.history[i].timestamp).toLocaleDateString()
+              );
+              yData.push(data.history[i].price);
+            }
+            setinformation({
+              labels: xData,
+              datasets: [
+                {
+                  label: "Price In USD",
+                  data: yData,
+                  fill: false,
+                  backgroundColor: colorDiagram,
+                  borderColor: "#333",
+                },
+              ],
+            });
+            setoptions({
+              plugins: {
+                title: {
+                  display: true,
+                  text: dropdownValue.toUpperCase() + " Diagram",
+                },
+              },
+            });
+            setcoinDesc(HTMLReactParser(coinData.description));
+            setloading(false);
           }
-          setinformation({
-            labels: xData,
-            datasets: [
-              {
-                label: "Price In USD",
-                data: yData,
-                fill: false,
-                backgroundColor: colorDiagram,
-                borderColor: "#333",
-              },
-            ],
-          });
-          setoptions({
-            plugins: {
-              title: {
-                display: true,
-                text: dropdownValue.toUpperCase() + " Diagram",
-              },
-            },
-          });
-          setcoinDesc(HTMLReactParser(coinData.description));
-          setloading(false);
         } catch (error) {
           console.log(error);
         }
       };
-      console.log(88);
+      // console.log(88);
       getData();
     }
+    return () => {
+      cleanUp = false;
+    };
   }, [coinData, dateValue]);
   useEffect(() => {
     setcolorDiagram(
       getComputedStyle(document.documentElement).getPropertyValue("--color_2")
     );
-    console.log(77);
+    // console.log(77);
   }, [xData, dropdownValue]);
   if (loading) return <LoaderComp />;
   return (
