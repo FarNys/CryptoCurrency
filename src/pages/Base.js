@@ -31,7 +31,7 @@ const Base = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd/markets",
+          "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0",
           {
             method: "GET",
             headers: {
