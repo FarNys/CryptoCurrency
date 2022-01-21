@@ -57,19 +57,16 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch(
-          "https://cors-anywhere.herokuapp.com/https://coinranking1.p.rapidapi.com/coins",
-          {
-            method: "GET",
-            headers: {
-              "x-rapidapi-host": "coinranking1.p.rapidapi.com",
-              "x-rapidapi-key":
-                "coinrankingc695882520d4550aeb3b64054e3c4d44e81235b002be36f3",
-              "x-access-token":
-                "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
-            },
-          }
-        );
+        const res = await fetch("https://coinranking1.p.rapidapi.com/coins", {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+            "x-rapidapi-key":
+              "coinrankingc695882520d4550aeb3b64054e3c4d44e81235b002be36f3",
+            "x-access-token":
+              "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
+          },
+        });
         const data = await res.json();
         // console.log(data);
         dispatch(

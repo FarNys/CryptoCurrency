@@ -30,16 +30,19 @@ const Base = () => {
     setloading(true);
     const fetchData = async () => {
       try {
-        const res = await fetch("https://coinranking1.p.rapidapi.com/markets", {
-          method: "GET",
-          headers: {
-            "x-rapidapi-host": "coinranking1.p.rapidapi.com",
-            "x-rapidapi-key":
-              "1a6718770emsh2f3695f15ac9900p1dcf9djsn42038a44656c",
-            "x-access-token":
-              "coinrankingaf1ff7e237789e1f87c046650555ed7ec13c7b6a84dd0aef",
-          },
-        });
+        const res = await fetch(
+          "https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd/markets",
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+              "x-rapidapi-key":
+                "20f6895bcbmsh842ea3ded9cd0ffp1fb249jsnd927c8e845ac",
+              "x-access-token":
+                "coinrankingc695882520d4550aeb3b64054e3c4d44e81235b002be36f3",
+            },
+          }
+        );
         const data = await res.json();
         dispatch(
           getAllMarkets({
